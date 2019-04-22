@@ -1,0 +1,218 @@
+body{
+    height: 200vh;
+    display: grid;
+    grid-template: 
+    "header header"7%
+    "aside aside" 1fr
+    "main main" 3fr
+    "footer footer" 3%
+    /1fr 1fr;
+}
+
+
+/* ここからheader */
+
+header{
+    grid-area: header;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header div{
+    font-size: 13px;
+    margin-top: 20px;
+    opacity: 0.6;
+}
+
+header div a{
+    color:black;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+header div a:hover{
+    color: grey;
+    font-size: 20px;
+}
+
+.linha{
+    width: 500px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: grey;
+    animation: fadeIN 1s ease;
+}
+
+@keyframes fadeIN{
+    0%{
+        opacity:0;
+        width: 0;
+        height: 0;
+    }
+
+    50%{
+        opacity: 5;
+        width: 400px;
+        height: 3;
+    }
+
+    100%{
+        opacity: 1;
+        width: 500px;
+        height: 5px;
+    }
+}
+
+
+
+
+/* ここまでheader */
+
+
+/* ここからaside */
+
+
+aside{
+    grid-area: aside;
+    background-image: url(./img/color-sheet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: aliceblue;
+    animation: open 4s ease;
+}
+
+@keyframes open{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0.5;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+aside h2{
+    font-size: 64px;
+    margin-top: 50px;
+}
+
+aside p{
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+
+/*ここまでaside */
+
+
+
+
+main{
+    grid-area: main;
+    display:grid;
+    grid-template:
+    "main1 main2" 1fr
+    "main3 main4" 1fr
+    /1fr 1fr;
+    padding: 60px;
+    grid-gap: 20px;
+    
+}
+
+main div h3{
+    font-size: 55px;
+    color:gray;
+}
+
+main div img{
+    height: 60%;
+    width: 50%;
+    margin-left: 50px;
+    margin-top:30px;
+    opacity: 1;
+
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+main div img:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    opacity: 0.6;
+}
+
+main div{
+    background-color: beige;
+}
+
+
+
+.spring{
+    grid-area: main1;
+    
+}
+
+.summer{
+    grid-area:main2;    
+}
+
+.autum{
+    grid-area:main3;
+}
+
+.winter{
+    grid-area: main4;
+}
+
+
+
+
+/* ここまでaside */
+
+footer{
+    grid-area: footer;
+    background-color: grey;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: end;
+    
+}
+
+footer p{
+    margin-top:10px;
+}
+
+
+
+/* ここからレスポンシブ */
+
+@media screen and (max-width:600px){
+    main{
+        display: grid;
+        grid-template:
+        "main1" 1fr
+        "main2" 1fr
+        "main3" 1fr
+        "main4" 1fr
+        /1fr 
+    }   
+
+    .linha{
+        width: 400px;
+        height: 5px;
+        
+    }
+
+    footer{
+        text-align: center;
+    }
+}
